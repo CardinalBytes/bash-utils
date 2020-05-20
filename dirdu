@@ -1,0 +1,4 @@
+#!/bin/bash
+for f in ~/*; do
+    echo "$(du -sh $f)"
+done | sort -h -r
