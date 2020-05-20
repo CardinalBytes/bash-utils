@@ -4,7 +4,7 @@ if [ -z "$NEW_USER" ]; then
 	return
 else
 	user="$NEW_USER"
-	printf 'user is set to %s' "$user"
+	printf 'user is set to %s\n' "$user"
 fi
 
 if [ -z "$SUDOGROUP" ]; then
@@ -23,7 +23,7 @@ fi
 
 useradd -m -s /bin/bash -G "$sudogroup" "$user"
 if [ -z "$PUBKEY" ]; then 
-	printf 'no pubkey given, ssh access will not be setup for the user %s' "$user"
+	printf 'no pubkey given, ssh access will not be setup for the user %s\n' "$user"
 else 
 	pubkey="$PUBKEY"
 	echo "pubkey is set for ${user} and ssh access will be setup"
